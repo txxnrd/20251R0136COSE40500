@@ -19,7 +19,7 @@ def analyze_sentiment(text):
     
 while True:
     user_input = input("Enter a sentence (type 'exit' to quit): ")
-    if user_input == "exit":
+    if user_input.lower() == "exit" == "exit":
         break
     if not user_input:
         print("Empty input. Please enter a sentence.")
