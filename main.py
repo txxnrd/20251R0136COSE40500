@@ -17,7 +17,7 @@ def print_colored_result(result, score):
     else:
         print(Fore.YELLOW + f"{result} | Score: {score:.2f}" + Style.RESET_ALL)
         
-def analyze_sentiment(text):
+def analyze_sentiment(text: str) -> str:
     scores = analyzer.polarity_scores(text)
     if scores['compound'] >= 0.05:
         return "Positive 😊"
