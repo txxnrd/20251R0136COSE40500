@@ -40,3 +40,8 @@ while True:
     score = analyzer.polarity_scores(user_input)['compound']
     result = analyze_sentiment(user_input)
     print_colored_result(result, score)
+
+def test_analyze_sentiment():
+    assert analyze_sentiment("I love it!") == "Positive 😊"
+    assert analyze_sentiment("This is awful.") == "Negative 😠"
+    assert analyze_sentiment("I went to the store.") == "Neutral 😐"
