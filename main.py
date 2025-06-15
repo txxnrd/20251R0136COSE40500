@@ -16,7 +16,9 @@ def analyze_sentiment(text):
     else:
         return "Neutral 😐"
     
-    
+print("Simple Sentiment Analyzer")
+print("Type a sentence to analyze its sentiment.")
+print("Type 'exit' to quit.\n")
 while True:
     user_input = input("Enter a sentence (type 'exit' to quit): ")
     if user_input.lower() == "exit" == "exit":
