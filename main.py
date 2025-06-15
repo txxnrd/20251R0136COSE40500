@@ -3,17 +3,15 @@
 # Description: This Python script implements a basic sentiment analyzer.
 # It uses predefined positive and negative word lists to classify user input
 # as positive, negative, or neutral sentiment. No machine learning is used.
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-positive_words = ["good", "great", "happy", "awesome", "fantastic", "love","brilliant","fabulous"]
-negative_words = ["bad", "terrible", "sad", "horrible", "hate", "worst","awful"]
+analyzer = SentimentIntensityAnalyzer()
 
 def analyze_sentiment(text):
-    text = text.lower()  # Convert to lowercase for uniform comparison
-    pos = sum(word in text for word in positive_words)
-    neg = sum(word in text for word in negative_words)
-    if pos > neg:
+    scores = analyzer.polarity_scores(text)
+    if scores['compound'] >= 0.05:
         return "Positive 😊"
-    elif neg > pos:
+    elif scores['compound'] <= -0.05:
         return "Negative 😠"
     else:
         return "Neutral 😐"
