@@ -21,4 +21,7 @@ while True:
     user_input = input("Enter a sentence (type 'exit' to quit): ")
     if user_input == "exit":
         break
+    if not user_input:
+        print("Empty input. Please enter a sentence.")
+        continue
     print(analyze_sentiment(user_input))
