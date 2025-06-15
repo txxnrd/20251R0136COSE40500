@@ -25,3 +25,5 @@ while True:
         print("Empty input. Please enter a sentence.")
         continue
     print(analyze_sentiment(user_input))
+    result = analyze_sentiment(user_input)
+    print(f"{result} | Score: {analyzer.polarity_scores(user_input)['compound']}")
